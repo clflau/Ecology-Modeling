@@ -1,0 +1,28 @@
+---
+title: "Ecology problem set 1"
+author: "Clive Lau"
+date: "January 18, 2016"
+output: pdf_document
+---
+
+#Exercise 1c - Allee effect in Logistic Density-dependence model
+```{r}
+
+A <- 40
+K <- 100
+r <- -20
+
+curve(r*N*(1-(N/K))*((N/A)-1), 0, 100, xname = "N")
+abline(h = 0, v = 0)
+
+```
+
+#Exercise 3c - Beverton-Holt model
+```{r}
+
+K <- 100
+curve(1*N, 0, 120, xname = "N", col = "red")
+x <- c(.25, .5, 2, 5, 10)
+for(R in x){
+  curve((R*N)/(1+((R-1)/K)*N), 0, 120, xname = "N", add = TRUE)
+}
