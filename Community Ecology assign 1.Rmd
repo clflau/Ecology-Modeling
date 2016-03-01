@@ -1,5 +1,5 @@
 ---
-title: "Hubbel assignment 1"
+title: "Hubbell assignment 1"
 author: "Clive Lau"
 date: "February 29, 2016"
 output: pdf_document
@@ -48,10 +48,10 @@ tseq <- seq(0, 120*3600)
 
 exper1.out <- lsoda( init, tseq, NutriODE, parameters)
 
-plot(exper1.out[,1]/3600, log(exper1.out[,3])/200, col="blue", type="l", ylim = c(0.03, 0.08), xaxt = "n", xlab = "Time(hours)", ylab = "Log cells/ml")
-lines(exper1.out[,1]/3600, log(exper1.out[,4])/200, col="red", type="l")
+plot(exper1.out[,1]/3600, log(exper1.out[,3])/200, type="l", ylim = c(0.03, 0.08), xaxt = "n", xlab = "Time(hours)", ylab = "Log cells/ml")
+lines(exper1.out[,1]/3600, log(exper1.out[,4])/200, type="l", lty = 2)
 axis(side = 1, at = seq(0, length(exper1.out[,1])/3600, by=10))
-legend(20, 0.05, c("C-8", "PAO"), col = c("blue", "red"), lty = c(1, 1))
+legend(20, 0.05, c("C-8", "PAO"), lty = c(1, 2))
 ```
 
 #Experiment 2: equal K_S and D, r varies
@@ -79,10 +79,10 @@ parameters <- c(S_0=S_0, D=D, y1=y1, K_S1=K_S1, mu1=mu1, r1=r1, J1=J1, y2=y2, K_
 
 exper2.out <- lsoda( init, tseq, NutriODE, parameters)
 
-plot(exper2.out[,1]/3600, log(exper2.out[,3])/200, col="blue", type="l", ylim = c(0.03, 0.08), xaxt = "n", xlab = "Time(hours)", ylab = "Log cells/ml")
-lines(exper2.out[,1]/3600, log(exper2.out[,4])/200, col="red", type="l")
+plot(exper2.out[,1]/3600, log(exper2.out[,3])/200, type="l", ylim = c(0.03, 0.08), xaxt = "n", xlab = "Time(hours)", ylab = "Log cells/ml")
+lines(exper2.out[,1]/3600, log(exper2.out[,4])/200, type="l", lty = 2)
 axis(side = 1, at = seq(0, length(exper2.out[,1])/3600, by=10))
-legend("topright", c("C-8 nal(r)spec(s)", "C-8 nal(s)spec(r)"), col = c("blue", "red"), lty = c(1, 1), cex = 0.75)
+legend("topright", c("C-8 nal(r)spec(s)", "C-8 nal(s)spec(r)"), lty = c(1, 2), cex = 0.75)
 ```
 
 #Experiment 3: equal J, K_S and r vary
@@ -110,8 +110,8 @@ parameters <- c(S_0=S_0, D=D, y1=y1, K_S1=K_S1, mu1=mu1, r1=r1, J1=J1, y2=y2, K_
 
 exper3.out <- lsoda( init, tseq, NutriODE, parameters)
 
-plot(exper3.out[,1]/3600, log(exper3.out[,3])/200, col="blue", type="l", ylim = c(0.03, 0.08), xaxt = "n", xlab = "Time(hours)", ylab = "Log cells/ml")
-lines(exper3.out[,1]/3600, log(exper3.out[,4])/200, col="red", type="l")
+plot(exper3.out[,1]/3600, log(exper3.out[,3])/200, type="l", ylim = c(0.03, 0.08), xaxt = "n", xlab = "Time(hours)", ylab = "Log cells/ml")
+lines(exper3.out[,1]/3600, log(exper3.out[,4])/200, type="l", lty = 2)
 axis(side = 1, at = seq(0, length(exper3.out[,1])/3600, by=10))
-legend("topright", c("C-8 nal(r)spec(s)", "C-8 nal(s)spec(r)"), col = c("blue", "red"), lty = c(1, 1), cex = 0.75)
+legend("topright", c("C-8 nal(r)spec(s)", "C-8 nal(s)spec(r)"), lty = c(1, 2), cex = 0.75)
 ```
